@@ -4,12 +4,30 @@
     <title>Forum</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+<%= stylesheet_link_tag "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+     <nav class="navbar navbar-expand-md navbar-default flex ">
+  <a class="navbar-brand" href="#">Simple forum</a>
+<ul class="nav">
+  <li>
+    <%= link_to "Home", home_path %>
+  </li>
+</ul>
+<div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+<ul class="nav ">
+  <li>
+   <%= link_to "Create post", new_post_path%>
+  </li>
+</ul>
+  </div>
+</nav>
+<div class="container"> 
     <%= yield %>
+    </div>
   </body>
 </html>
